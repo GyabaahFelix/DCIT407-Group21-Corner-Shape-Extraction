@@ -1,74 +1,123 @@
-# Dataset Description: Corner and Shape Feature Extraction
+# Dataset Notes
+## Corner and Shape Feature Extraction for Simple Image Analysis
+
+---
 
 ## 1. Overview
-This dataset was created for the project:
-**"Corner and Shape Feature Extraction for Simple Image Analysis."**
 
-The dataset contains images categorized to evaluate corner detection and shape analysis algorithms such as:
-- Harris Corner Detection
-- Shi-Tomasi Corner Detection
-- Canny Edge Detection
-- Contour Detection
-- Hough Transform
+This dataset was created for the project:
+
+"Corner and Shape Feature Extraction for Simple Image Analysis"
+
+It contains 15 high-resolution RGB images organized into 5 structured categories designed to evaluate classical computer vision feature extraction algorithms.
 
 ---
 
 ## 2. Dataset Structure
 
-The dataset is divided into three main categories:
+Total Images: 15  
+Images per Category: 3  
 
-### 1. Geometric Shapes
-Images containing simple shapes on clean backgrounds:
-- Squares
-- Rectangles
-- Triangles
-- Circles
-- Polygons
+### 1. Building
+Images:
+- building1.jpg
+- building2.jpg
+- building3.jpg
 
-Purpose: To validate corner detection precision under controlled conditions.
-
----
-
-### 2. Real-World Structured Objects
-Images of objects with strong edges and corners:
-- Buildings
-- Windows
-- Street signs
-- Boxes
-- Doors
-
-Purpose: To evaluate algorithm performance in real-world scenarios.
+Description:
+Architectural structures with strong vertical and horizontal edges. Ideal for detecting structural corners and line intersections.
 
 ---
 
-### 3. Complex Scenes
-Images with multiple overlapping objects and varying lighting conditions.
+### 2. Checker
+Images:
+- checker1.jpg
+- checker2.jpg
+- checker3.jpg
 
-Purpose: To test robustness and generalization capability.
+Description:
+Checkerboard-style patterns with repeated high-contrast corner points.
+Excellent for evaluating Harris and Shi-Tomasi corner detection.
+
+---
+
+### 3. Grid
+Images:
+- grid1.jpg
+- grid2.jpg
+- grid3.jpg
+
+Description:
+Structured grid-like patterns with dense corner distributions.
+Useful for testing robustness of corner detection under repetition.
+
+---
+
+### 4. Object
+Images:
+- object1.jpg
+- object2.jpg
+- object3.jpg
+
+Description:
+Everyday objects with mixed edge structures and moderate complexity.
+Used to evaluate feature extraction in semi-structured environments.
+
+---
+
+### 5. Shape
+Images:
+- shape1.jpg
+- shape4.jpg
+- shape5.jpg
+
+Description:
+Geometric shapes with defined contours.
+Useful for contour detection and shape approximation experiments.
 
 ---
 
 ## 3. Image Specifications
 
-- Format: JPG / PNG
-- Resolution: ≥ 512×512
-- Color format: RGB
-- Source: Unsplash, Pexels, Pixabay (royalty-free images)
+- Format: JPG
+- Color Space: RGB
+- Resolution Range:
+  - Minimum: 1536 × 2048
+  - Maximum: 6720 × 4480
+- Source: Locally collected structured images
 
 ---
 
-## 4. Preprocessing Plan
+## 4. Preprocessing Strategy
 
-Images will be:
-- Resized for uniformity
-- Smoothed using Gaussian blur
-- Processed using edge and corner detection algorithms
+Before feature extraction, images will be:
+
+1. Converted to grayscale
+2. Resized to uniform resolution (512×512)
+3. Smoothed using Gaussian Blur
+4. Processed using:
+   - Harris Corner Detection
+   - Shi-Tomasi Corner Detection
+   - Canny Edge Detection
+   - Contour Detection
+   - Hough Transform
 
 ---
 
 ## 5. Intended Use
 
 This dataset is intended for:
-- Educational purposes
-- Feature extraction experiments
-- Computer vision algorithm testing
+
+- Educational computer vision experiments
+- Corner detection validation
+- Shape detection evaluation
+- Structured feature extraction analysis
+
+---
+
+## 6. Observations
+
+- Checker and Grid categories produce dense corner responses.
+- Building category produces structural architectural corners.
+- Shape category is suitable for contour-based shape classification.
+- Object category provides semi-natural scene variability.
